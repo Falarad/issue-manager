@@ -11,7 +11,7 @@ var issueRouter = require('../routes/issues');
 var usersRouter = require('../routes/users');
 
 app.use(bodyParser.urlencoded({ extended: true })); 
-app.set('views', '../views');
+app.set('views', './views');
 app.set('view engine', 'jade');
 app.use('/', issueRouter);
 app.use('/users', usersRouter);
