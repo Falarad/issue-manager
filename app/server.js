@@ -4,7 +4,7 @@ var issues = require('../node_modules/issue-manager');
 var path = require('path');
 var jade = require('jade');
 var bodyParser = require('body-parser');
-
+var port = process.env.PORT || 3000;
 
 
 var issueRouter = require('../routes/issues');
@@ -16,4 +16,4 @@ app.set('view engine', 'jade');
 app.use('/', issueRouter);
 app.use('/users', usersRouter);
 
-app.listen(3000);
+app.listen(port);
