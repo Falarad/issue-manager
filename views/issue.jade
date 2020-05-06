@@ -1,0 +1,10 @@
+extends layout
+block content
+    div
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= title
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= status
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= name
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= created
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= updated
+        a(class="list-group-item list-group-item-secondary list-group-item-action text-dark")= details
+        a(class="list-group-item list-group-item-dark list-group-item-action" href= "#{id}.json/updt") Update Issue

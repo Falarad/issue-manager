@@ -1,0 +1,15 @@
+extends layout
+-var id
+block content
+    h1= title
+    each val in written
+        div(class="list-group")
+            each txt, index in val
+                if index == '_id'
+                    -id = txt
+                if index == 'title'
+                    a(class="list-group-item list-group-item-dark list-group-item-action" href="issues/" + id + ".json") #{txt}
+                unless index == '_id' || index == 'title'
+                    a(class="list-group-item list-group-item-secondary list-group-item-action text-dark") #{txt}
+            a(class="list-group-item list-group-item-dark list-group-item-action link" href= "issues/#{id}.json/updt") Update Issue
+            br

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    form(action="../#{id}.json" method="POST")
+        div(class="form-group")
+            label(for="title") Title:
+            br
+            input(class="form-control" type="text" name="title" id="title" value="#{title}")
+            label(for="status") Status:
+            br
+            select(class="form-control" name="status" id="status")
+                if status == "New"
+                    option(value="New" selected) New
+                unless status == "New"
+                    option(value="New") New
+                if status == "Closed"
+                    option(value="Closed" selected) Closed
+                unless status == "Closed"
+                    option(value="Closed") Closed
+                if status == "Resolved"
+                    option(value="Resolved" selected) Resolved
+                unless status == "Resolved"
+                    option(value="Resolved") Resolved
+            label(for="name") Name:
+            br
+            input(class="form-control" type="text" name="assignee" id="assignee" value="#{name}")
+            label(for="details") Details:
+            br
+            input(class="form-control" type="textarea" name="details" id="details" value="#{details}" rows="10" cols="20")
+            br
+            input(class="btn btn-primary" type="submit" value="Submit")
+        
